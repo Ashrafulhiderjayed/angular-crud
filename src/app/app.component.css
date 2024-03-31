@@ -1,0 +1,32 @@
+
+.card {
+    margin-bottom: 20px;
+  }
+  
+  .btn-secondary {
+    margin-top: 20px;
+  }
+
+  h1{
+    background-color: coral;
+    color: aliceblue;
+    text-align: center;
+    padding: 1%;
+  }
+
+  ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  li{
+    text-decoration: none;
+    color: crimson;
+  }
+
+  section{
+    overflow-x: hidden;
+  }
+  

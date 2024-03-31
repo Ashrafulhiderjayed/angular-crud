@@ -1,0 +1,108 @@
+<section>
+
+    <div class="search">
+        <input type="text" name="button" id="" placeholder="input artist id" [(ngModel)]="searchString">
+        <button (click)="onSearchBtnClick()">Search</button>
+    </div>
+
+    <div class="artist-cards">        
+        <h2>Featured Artist</h2>
+        <div class="card">
+            <p><span style="font-weight: bold;">ID:</span> {{artists[0].artistId}} </p>
+            <p><span style="font-weight: bold;">Name:</span> {{artists[0].name}} </p>
+            <p><span style="font-weight: bold;">Date of Birth:</span> {{formatDate(artist.DOB)}} </p>
+            <p><span style="font-weight: bold;">Gender:</span> {{artists[0].gender}} </p>
+            <p><span style="font-weight: bold;">Artwork Type:</span> {{artists[0].artworkType}} </p>
+            <p><span style="font-weight: bold;">Contact Info:</span> {{artists[0].contactInfo}} </p>
+            <p><span style="font-weight: bold;">Exhibition Date:</span> {{formatDate(artist.exhibitionDate)}} </p>
+            <p><span style="font-weight: bold;">Special Notes:</span> {{artists[0].specialNotes}} </p>
+        </div>
+    <br>
+    
+    </div>
+
+    <h2>All Artists</h2>
+    <div *ngIf="searchedArtist.id===null" class="responsive-card">
+        <div *ngFor="let artist of artists" class="card">
+            <p><span style="font-weight: bold;">ID:</span> {{artist.artistId}}</p>
+            <p><span style="font-weight: bold;">Name:</span> {{artist.name}}</p>
+            <p><span style="font-weight: bold;">Date of Birth:</span> {{formatDate(artist.DOB)}} </p>
+            <p><span style="font-weight: bold;">Gender:</span> {{artist.gender}} </p>
+            <p><span style="font-weight: bold;">Artwork Type:</span> {{artist.artworkType}} </p>
+            <p><span style="font-weight: bold;">Contact Info:</span> {{artist.contactInfo}} </p>
+            <p><span style="font-weight: bold;">Exhibition Date:</span> {{formatDate(artist.exhibitionDate)}} </p>
+            <p><span style="font-weight: bold;">Special Notes:</span> {{artist.specialNotes}} </p>
+            <div class="card-button-div">
+                <button class="edit-button" (click)="editArtist(artist)">Edit</button>
+                <button class="delete-button" (click)="deleteArtist(artist.id!)">Delete</button>
+            </div>
+        </div>        
+    </div>
+    <div *ngIf="searchedArtist.id!==null" class="responsive-card">
+        <div class="card">
+            <p><span style="font-weight: bold;">ID:</span> {{searchedArtist.artistId}}</p>
+            <p><span style="font-weight: bold;">Name:</span> {{searchedArtist.name}}</p>
+            <p><span style="font-weight: bold;">Date of Birth:</span> {{formatDate(searchedArtist.DOB)}} </p>
+            <p><span style="font-weight: bold;">Gender:</span> {{searchedArtist.gender}} </p>
+            <p><span style="font-weight: bold;">Artwork Type:</span> {{searchedArtist.artworkType}} </p>
+            <p><span style="font-weight: bold;">Contact Info:</span> {{searchedArtist.contactInfo}} </p>
+            <p><span style="font-weight: bold;">Exhibition Date:</span> {{formatDate(searchedArtist.exhibitionDate)}} </p>
+            <p><span style="font-weight: bold;">Special Notes:</span> {{searchedArtist.specialNotes}} </p>
+            <div class="card-button-div">
+                <button class="edit-button" (click)="editArtist(artist)">Edit</button>
+                <button class="delete-button" (click)="deleteArtist(artist.id!)">Delete</button>
+            </div>
+        </div>        
+    </div>
+
+    <div id="artist-input" style="margin-top: 50px;">
+        <h2 class="text-center">Add New Artist</h2>
+        <form #artistForm="ngForm" (ngSubmit)="onSubmit(artistForm)">
+            <label for="artistId">ID:</label><br>
+            <input type="text" id="artistId" class="additional-padding" name="artistID" required
+                   [(ngModel)]="artist.artistId" #name="ngModel"><br>
+
+            <label for="artistName">Name:</label><br>
+            <input type="text" id="artistName" class="additional-padding" name="artistName" required
+                   [(ngModel)]="artist.name" #name="ngModel"><br>
+          
+            <label for="artistDOB" class="additional-padding">DOB:</label><br>
+            <input type="date" id="artistDOB" class="additional-padding" name="artistDOB" required
+                   [(ngModel)]="artist.DOB" #dob="ngModel"><br>
+          
+            <label for="artistGender">Gender:</label><br>
+            <select name="artistGender" class="additional-padding" required
+                    [(ngModel)]="artist.gender" #gender="ngModel">
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Unspecified">Unspecified</option>
+            </select><br>
+          
+            <label for="artworkType">Artwork Type:</label><br>
+            <select name="artworkType" class="additional-padding" required
+                    [(ngModel)]="artist.artworkType" #artworkType="ngModel">
+              <option value="Painting">Painting</option>
+              <option value="Sculpture">Sculpture</option>
+              <option value="Photograph">Photograph</option>
+              <option value="Video Art">Video Art</option>
+              <option value="Digital Art">Digital Art</option>
+              <option value="Printmaking">Printmaking</option>
+            </select><br>
+          
+            <label for="contactInfo">Contact Info:</label><br>
+            <input type="text" class="additional-padding" id="contactInfo" name="contactInfo" required
+                   [(ngModel)]="artist.contactInfo" #contactInfo="ngModel"><br>
+          
+            <label for="exhibitionDate">Exhibition Date:</label><br>
+            <input type="date" class="additional-padding" id="exhibitionDate" name="exhibitionDate"
+                   [(ngModel)]="artist.exhibitionDate" #exhibitionDate="ngModel"><br>
+          
+            <label for="specialNotes">Special Notes:</label><br>
+            <input type="text" class="additional-padding" id="specialNotes" name="specialNotes"
+                   [(ngModel)]="artist.specialNotes" #specialNotes="ngModel"><br>
+          
+            <button type="submit" [disabled]="artistForm.invalid">Submit</button>
+          </form>
+    </div>
+</section>
+  

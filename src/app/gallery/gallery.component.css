@@ -1,0 +1,150 @@
+body{
+  overflow-x: hidden;
+}
+section{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+}
+
+h1{
+    display: block;
+}
+
+h2{
+    color: coral;
+    /* border-bottom: 2px solid #00b36e;
+    width: fit-content;
+    display: block; */
+    display: block; 
+}
+
+  
+  .artist-cards {
+    overflow-x: hidden;
+  }
+  
+
+  /* search design */
+  .search{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+.button{
+    text-align: end;
+}
+.button button{
+    color: #fff;
+    padding: 10px 20px;
+    font-size: medium;
+    background-color: crimson;
+    border-radius: 8%;
+    border: none;
+}
+
+#grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* grid-template-columns: 33% 33% 33%; */
+  gap: 1rem;
+}
+
+.grid-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+.responsive-image{
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+  /* Define grid layout */
+.responsive-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 80rem;
+  }
+  
+  /* Card Design */
+  .card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: justify;
+  }
+  
+  .card p {
+    margin-bottom: 2.5rem;
+
+  }
+
+  /* card-button-div */
+  .card-button-div{
+    display: flex;
+    gap: 5px;
+    justify-content: left;
+  }
+
+  .edit-button{
+    color: #fff;
+    background-color: lightgreen;
+    padding: 6px 25px;
+    border: none;
+  }
+  .delete-button{
+    color: #fff;
+    background-color: crimson;
+    padding: 6px 20px;
+    border: none;
+  }
+
+
+  /* artist-input */
+  #artist-input{
+    width: 15%;
+  }
+
+  .additional-padding{
+    /* padding-top: 1%; */
+    /* padding-bottom: 1%; */
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    #grid-container {
+      /* display: grid; */
+      grid-template-columns: 1fr;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    .responsive-card {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .responsive-card {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  

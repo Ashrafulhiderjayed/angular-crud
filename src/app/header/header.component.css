@@ -1,0 +1,41 @@
+.header {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .header ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .header ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .header ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+  }
+  
+  .header ul li a:hover {
+    background-color: #555;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 600px) {
+    .header ul li {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+  }
+  
