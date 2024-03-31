@@ -1,5 +1,14 @@
 # Task2
 
+<div align="center">
+  <a href="#">
+    <img src="/src/assets/art gallery image.png" alt="Homepage" >
+  </a>
+
+
+  
+</div>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
 
 ## Development server
